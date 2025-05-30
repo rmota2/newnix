@@ -132,41 +132,6 @@ sudo tee /etc/nixos/flake.nix > /dev/null << 'EOF'
             };
           };
           
-          # Mumble server (native NixOS container)
-          containers.mumble = {
-            autoStart = true;
-            privateNetwork = true;
-            hostAddress = "192.168.100.1";
-            localAddress = "192.168.100.2";
-            
-            forwardPorts = [
-              {
-                containerPort = 64738;
-                hostPort = 64738;
-                protocol = "tcp";
-              }
-              {
-                containerPort = 64738;
-                hostPort = 64738;
-                protocol = "udp";
-              }
-            ];
-            
-            config = { config, pkgs, ... }: {
-              system.stateVersion = "25.05";
-              
-              # Mumble server
-              services.murmur = {
-                enable = true;
-                openFirewall = true;
-                welcomeText = "Welcome to Mumble on NixOS Pi!";
-                serverPassword = "admin";
-                bandwidth = 72000;
-                users = 50;
-                port = 64738;
-              };
-            };
-          };
           
           # System packages
           environment.systemPackages = with pkgs; [
