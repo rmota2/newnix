@@ -160,7 +160,7 @@ sudo tee /etc/nixos/flake.nix > /dev/null << 'EOF'
                 enable = true;
                 openFirewall = true;
                 welcomeText = "Welcome to Mumble on NixOS Pi!";
-                serverPassword = "admin";  # 
+                serverPassword = "admin";
                 bandwidth = 72000;
                 users = 50;
                 port = 64738;
