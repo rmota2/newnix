@@ -159,8 +159,8 @@ sudo tee /etc/nixos/flake.nix > /dev/null << 'EOF'
               services.murmur = {
                 enable = true;
                 openFirewall = true;
-                welcometext = "Welcome to Mumble on NixOS Pi!";
-                serverpassword = "admin";  # 
+                welcomeText = "Welcome to Mumble on NixOS Pi!";
+                serverPassword = "admin";  # 
                 bandwidth = 72000;
                 users = 50;
                 port = 64738;
@@ -183,10 +183,3 @@ sudo tee /etc/nixos/flake.nix > /dev/null << 'EOF'
 }
 EOF
 
-echo "Configuration file created at /etc/nixos/flake.nix"
-echo ""
-echo "Next steps:"
-echo "1. Edit /etc/nixos/flake.nix to add your SSH key"
-echo "2. Change the passwords in the configuration"
-echo "3. Run: sudo nixos-generate-config"
-echo "4. Run: sudo nixos-rebuild switch --flake /etc/nixos#nixos"
