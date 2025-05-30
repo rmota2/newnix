@@ -1,7 +1,6 @@
 
 #!/bin/bash
 # NixOS Pi Setup Script
-# This script configures a fresh NixOS installation with your configuration
 
 set -e
 
@@ -72,7 +71,7 @@ sudo tee /etc/nixos/flake.nix > /dev/null << 'EOF'
             initialPassword = "admin";  
             openssh.authorizedKeys.keys = [
               
-              1hYemgYjhiOwm1GxxJR8IEf+WIUpk3moKr4pD/xwmsw sticker9909@gmail.com
+		"AAAAC3NzaC1lZDI1NTE5AAAAIH/GcEBOq+XMOUcrn2K99e4MGjefO049gaNcywwBsg/T sticker9909@gmail.com"
             ];
           };
           
